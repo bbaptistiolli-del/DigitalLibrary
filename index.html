@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Study Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>📚 Digital Study Library</h1>
+    <p>25 School Books · Click to Read Instantly</p>
+</header>
+
+<nav>
+    <button onclick="openSection('library')">📘 Books</button>
+    <button onclick="openSection('notes')">📝 Notes</button>
+</nav>
+
+<!-- ================= LIBRARY =================== -->
+<section id="library" class="page">
+    <h2>Bookshelf</h2>
+    <p>Click a book to open the PDF reader or click at the link button</p>
+    <p>Some of the books are Ebooks, so click on the pdf to get access to the Username/password, then click on the link (#) </p>
+
+    <div id="bookGrid" class="book-grid"></div>
+</section>
+
+<!-- ================= NOTES =================== -->
+<section id="notes" class="page" style="display:none;">
+    <h2>📝 Upload Your Notes</h2>
+    <p>Share useful revision notes with your classmates.</p>
+
+    <div class="upload-box">
+        <input type="file" id="fileInput" accept="application/pdf">
+        <button onclick="uploadNote()">Upload</button>
+    </div>
+
+    <h3>📄 Shared Notes</h3>
+    <ul id="noteList"></ul>
+</section>
+
+<!-- ================= PDF VIEWER POPUP =================== -->
+<div id="pdfPopup" class="popup">
+    <div class="popup-header">
+        <button onclick="closePDF()">⬅ Back</button>
+        <a id="pdfDownload" download>Download PDF</a>
+    </div>
+
+    <iframe id="pdfFrame"></iframe>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
